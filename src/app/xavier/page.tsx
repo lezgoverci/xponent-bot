@@ -7,6 +7,7 @@ const ExternalPage = () => {
         src="https://versatile-syscall-2oumxz.sandbox.livekit.io"
         style={{ width: '100%', height: '100%', border: 'none' }}
         title="External Website"
+        allow="camera; microphone"
       />
     </div>
   );

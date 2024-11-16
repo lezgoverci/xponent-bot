@@ -5,6 +5,7 @@ import { Page } from '@/components/Page';
 import { TonConnectButton, useTonWallet } from '@tonconnect/ui-react';
 import {
   Avatar,
+  Button,
   Cell,
   List,
   Navigation,
@@ -13,6 +14,7 @@ import {
   Text,
   Title,
 } from '@telegram-apps/telegram-ui';
+import { Link } from '@/components/Link/Link';
 
 import { DisplayData } from '@/components/DisplayData/DisplayData';
 
@@ -32,7 +34,7 @@ export default function TONConnectPage() {
                 To display the data related to the TON Connect, it is required
                 to connect your wallet
               </Text>
-              <TonConnectButton className="ton-connect-page__button"/>
+              <TonConnectButton className="ton-connect-page__button" />
             </>
           }
         />
@@ -60,7 +62,7 @@ export default function TONConnectPage() {
               <Cell
                 before={
                   <Avatar src={wallet.imageUrl} alt="Provider logo" width={60}
-                          height={60}/>
+                    height={60} />
                 }
                 after={<Navigation>About wallet</Navigation>}
                 subtitle={wallet.appName}
@@ -72,9 +74,22 @@ export default function TONConnectPage() {
                 <Title level="3">{wallet.name}</Title>
               </Cell>
             </Section>
-            <TonConnectButton className="ton-connect-page__button-connected"/>
+            <TonConnectButton className="ton-connect-page__button-connected" />
           </>
         )}
+        <Link href="/xavier">
+          <Button
+            mode="filled"
+            size="s"
+            // onClick={() => {
+            //   //redirect to /xavier page
+
+            // }}
+          >
+            Call Xavier
+          </Button>
+        </Link>
+
         <DisplayData
           header="Account"
           rows={[
