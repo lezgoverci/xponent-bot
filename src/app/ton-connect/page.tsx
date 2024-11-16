@@ -24,7 +24,7 @@ export default function TONConnectPage() {
   const wallet = useTonWallet();
   if (!wallet) {
     return (
-      <Page>
+      <Page back={true}>
         <Placeholder
           className="ton-connect-page__placeholder"
           header="TON Connect"
@@ -54,7 +54,7 @@ export default function TONConnectPage() {
   } = wallet;
 
   return (
-    <Page>
+    <Page back={false}>
       <List>
         {'imageUrl' in wallet && (
           <>
@@ -86,7 +86,7 @@ export default function TONConnectPage() {
 
             // }}
           >
-            Call Xavier
+            Call Xavier 2
           </Button>
         </Link>
 
