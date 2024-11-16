@@ -51,7 +51,7 @@ function RootInner({ children }: PropsWithChildren) {
   }, [debug]);
 
   return (
-    <TonConnectUIProvider manifestUrl="https://3005-222-127-154-85.ngrok-free.app/tonconnect-manifest.json">
+    <TonConnectUIProvider manifestUrl="/tonconnect-manifest.json">
       <AppRoot
         appearance={isDark ? 'dark' : 'light'}
         platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
