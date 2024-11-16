@@ -20,6 +20,8 @@ import { DisplayData } from '@/components/DisplayData/DisplayData';
 
 import './styles.css';
 
+import {VirtualId} from '@/components/virtual-id';
+
 export default function TONConnectPage() {
   const wallet = useTonWallet();
   if (!wallet) {
@@ -38,6 +40,7 @@ export default function TONConnectPage() {
             </>
           }
         />
+        <VirtualId />
       </Page>
     );
   }
@@ -58,7 +61,7 @@ export default function TONConnectPage() {
       <List>
         {'imageUrl' in wallet && (
           <>
-            <Section>
+            {/* <Section>
               <Cell
                 before={
                   <Avatar src={wallet.imageUrl} alt="Provider logo" width={60}
@@ -73,7 +76,7 @@ export default function TONConnectPage() {
               >
                 <Title level="3">{wallet.name}</Title>
               </Cell>
-            </Section>
+            </Section> */}
             <TonConnectButton className="ton-connect-page__button-connected" />
           </>
         )}
@@ -89,7 +92,7 @@ export default function TONConnectPage() {
             Call Xavier
           </Button>
         </Link>
-
+{/* 
         <DisplayData
           header="Account"
           rows={[
@@ -113,8 +116,9 @@ export default function TONConnectPage() {
                 .join(', '),
             },
           ]}
-        />
+        /> */}
       </List>
+      
     </Page>
   );
 };
