@@ -20,6 +20,8 @@ import { DisplayData } from '@/components/DisplayData/DisplayData';
 
 import './styles.css';
 
+import Profile from '@/components/Profile';
+
 export default function TONConnectPage() {
   const wallet = useTonWallet();
   if (!wallet) {
@@ -115,6 +117,7 @@ export default function TONConnectPage() {
           ]}
         />
       </List>
+      <Profile />
     </Page>
   );
 };
