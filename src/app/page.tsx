@@ -20,7 +20,6 @@ import { DisplayData } from '@/components/DisplayData/DisplayData';
 
 import './styles.css';
 
-import Profile from '@/components/Profile';
 
 export default function TONConnectPage() {
   const wallet = useTonWallet();
@@ -60,7 +59,7 @@ export default function TONConnectPage() {
       <List>
         {'imageUrl' in wallet && (
           <>
-            <Section>
+            {/* <Section>
               <Cell
                 before={
                   <Avatar src={wallet.imageUrl} alt="Provider logo" width={60}
@@ -75,7 +74,7 @@ export default function TONConnectPage() {
               >
                 <Title level="3">{wallet.name}</Title>
               </Cell>
-            </Section>
+            </Section> */}
             <TonConnectButton className="ton-connect-page__button-connected" />
           </>
         )}
@@ -95,29 +94,21 @@ export default function TONConnectPage() {
         <DisplayData
           header="Account"
           rows={[
-            { title: 'Address', value: address },
-            { title: 'Chain', value: chain },
-            { title: 'Public Key', value: publicKey },
+            { title: 'Name', value: "vercillius mila jr" },
+            { title: 'Status', value: "Active" },
           ]}
         />
         <DisplayData
-          header="Device"
+          header="Achievements"
           rows={[
-            { title: 'App Name', value: appName },
-            { title: 'App Version', value: appVersion },
-            { title: 'Max Protocol Version', value: maxProtocolVersion },
-            { title: 'Platform', value: platform },
-            {
-              title: 'Features',
-              value: features
-                .map(f => typeof f === 'object' ? f.name : undefined)
-                .filter(v => v)
-                .join(', '),
-            },
+            { title: 'Early Adopter', value: "One of the first 1000 users to join the platform" },
+            { title: 'Power User', value: "Completed 100 successful transactions" },
+            { title: 'Community Champion', value: "Received 50 positive reviews from other users" },
+            { title: 'Premium Member', value: "Subscribed to premium membership for 6 months" },
           ]}
         />
       </List>
-      <Profile />
+ 
     </Page>
   );
 };
